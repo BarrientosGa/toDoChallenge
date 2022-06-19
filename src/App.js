@@ -1,8 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AddProject from './ToDo/AddProject/Index';
+import List from './ToDo/List/Index';
 
 function App() {
   return (
-   <h1>app</h1>
+   <BrowserRouter>
+    <Routes>
+      <Route exact path= '/' element={<List/>} />
+      <Route exact path= '/add' element={<AddProject/>} />
+    </Routes>
+   </BrowserRouter>
   );
 }
 
