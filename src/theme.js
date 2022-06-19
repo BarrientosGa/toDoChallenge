@@ -4,38 +4,44 @@ const Inter = 'Inter, sans-serif'
 const Roboto = 'Roboto, sans-serif'
 
 export const theme = createTheme({
-    pallete: {
+    palette: {
         button: {
             main: '#f5222d'
         },
         header: {
-            main: '#ffffff'
+            main: '#ffffff',
         }
     },
     typography: {
         h1: {
             fontFamily: Inter,
-            fontWeight: 600
+            fontWeight: 600,
+            color: 'rgba(0, 0, 0, 0.85)'
         },
         h2: {
             fontFamily: Inter,
-            fontWeight: 600
+            fontWeight: 600,
+            color: 'rgba(0, 0, 0, 0.85)'
         },
         h3: {
             fontFamily: Inter,
-            fontWeight: 600
+            fontWeight: 600,
+            color: 'rgba(0, 0, 0, 0.85)'
         },
         h4: {
             fontFamily: Inter,
-            fontWeight: 600
+            fontWeight: 600,
+            color: 'rgba(0, 0, 0, 0.85)'
         },
         h5: {
             fontFamily: Inter,
-            fontWeight: 600
+            fontWeight: 600,
+            color: 'rgba(0, 0, 0, 0.85)'
         },
         h6: {
             fontFamily: Inter,
-            fontWeight: 600
+            fontWeight: 600,
+            color: 'rgba(0, 0, 0, 0.85)'
         },
         subtitle1: {
             width: '84px',
