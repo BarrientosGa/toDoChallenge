@@ -5,8 +5,9 @@ const Roboto = 'Roboto, sans-serif'
 
 export const theme = createTheme({
     palette: {
-        button: {
-            main: '#f5222d'
+        secondary: {
+            main: '#f5222d',
+            contrastText: '#ffffff',
         },
         header: {
             main: '#ffffff',
@@ -44,18 +45,16 @@ export const theme = createTheme({
             color: 'rgba(0, 0, 0, 0.85)'
         },
         subtitle1: {
-            width: '84px',
-            height: '20px',
             fontFamily: Roboto,
             fontWeight: 400,
-            fontSize: '0.875rem'
+            fontSize: '0.875em'
         },
         subtitle2: {
             width: '165px',
             height: '16px',
             fontFamily: Roboto,
             fontWeight: 400,
-            fontSize: '0.625rem',
+            fontSize: '0.625em',
             color: 'rgba(0, 0, 0, 0.45)'
         },
     },

@@ -7,10 +7,10 @@ const SubHeader = () => {
         <Box border='1px solid #D9D9D9'>
             <AppBar position="static" color='header'>
                 <Toolbar>
-                    <Typography variant="h6" sx={{ flexGrow: 1, border: '1px solid red' }}>
+                    <Typography variant="h6" sx={{ flexGrow: 1}}>
                         My Projects
                     </Typography>
-                    <Button color="inherit" sx={{ border: '1px solid yellow' }}>
+                    <Button variant='contained' size='small' color='secondary'>
                         <AddIcon />
                         Add project
                     </Button>
