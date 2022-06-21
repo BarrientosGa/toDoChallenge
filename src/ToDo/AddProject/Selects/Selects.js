@@ -2,7 +2,6 @@ import React from 'react'
 import { MenuItem, TextField } from '@mui/material'
 
 const Selects = ({values,handleChange}) => {
-    console.log(values);
     return (
         <>
             <TextField

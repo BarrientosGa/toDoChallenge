@@ -3,7 +3,7 @@ import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
 
-const SubHeader = () => {
+const SubHeader = ({ editing }) => {
     return (
         <Box border='1px solid #D9D9D9'>
             <AppBar position="static" color='header'>
@@ -12,7 +12,7 @@ const SubHeader = () => {
                         My Projects
                     </Typography>
                     <Link to='/add'>
-                        <Button variant='contained' size='small' color='secondary' sx={{ padding: '10px' }} startIcon={<AddIcon sx={{fontSize:'23px !important'}} />}>
+                        <Button variant='contained' size='small' color='secondary' sx={{ padding: '10px' }} startIcon={<AddIcon sx={{ fontSize: '23px !important' }} />}>
                             Add project
                         </Button>
                     </Link>

@@ -4,12 +4,13 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const ITEM_HEIGHT = 48;
 
 
 
-const MenuOptions = () => {
+const MenuOptions = ({id, setEditing}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -45,9 +46,9 @@ const MenuOptions = () => {
                     },
                 }}
             >
-                <Link to={`/edit/1`}>
+                <Link to={`/edit/${id}`}>
                     <MenuItem selected={'Edit' === 'Pyxis'} onClick={handleClose}>
-                        <EditIcon />
+                        <EditIcon/>
                         <Typography variant="body1" color="initial" sx={{ marginLeft: '10px' }}>
                             Edit
                         </Typography>

@@ -1,43 +1,45 @@
-import React, {useId, useState } from 'react'
+import React, { useId, useState } from 'react'
 import { Box, Button, Container, Paper, TextField } from '@mui/material'
 import Selects from '../Selects/Selects'
-import { useDispatch } from 'react-redux'
-import { addToDo } from '../../../redux/Slice/toDoSlice'
-/* import { useParams } from 'react-router' */
+import { useDispatch, useSelector } from 'react-redux'
+import { addToDo, editToDo } from '../../../redux/Slice/toDoSlice'
+import moment from 'moment';
+import { useParams } from 'react-router-dom'
+
 
 const Form = () => {
-  /* const {id} = useParams()
-  console.log(typeof id);
-  const {array} = useSelector(state => state.toDo) */
   const dispatch = useDispatch()
+  const idForm = useId()
+  const { id } = useParams()
+  const { array } = useSelector(state => state.toDo)
+  const project = array.find(element => element.id === id)
+
+
   const [values, setValues] = useState({
-    id : useId(),
-    project : '',
-    description: '' ,
-    projectManager : '',
-    assignedTo : '',
-    status : ''
+    id: id === undefined ? idForm : project.id,
+    projectName: id === undefined ? '' : project.projectName,
+    description: id === undefined ? '' : project.description,
+    projectManager: id === undefined ? '' : project.projectManager,
+    assignedTo: id === undefined ? '' : project.assignedTo,
+    status: id === undefined ? '' : project.status,
   })
 
   const handleChange = (e) => {
     setValues({
       ...values,
-      [e.target.name] : e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(addToDo(values))
+    if (id === undefined) {
+      dispatch(addToDo({ ...values, date: moment(new Date()).format('DD/MM/YYYY HH:mm a') }))
+    }
+    else {
+      dispatch(editToDo({ ...values, date: moment(new Date()).format('DD/MM/YYYY HH:mm a') }))
+    }
   }
-
- /*  useEffect(() => {
-    const test = array.find(element => {
-      return element.id == id ? setValues(element) : null
-    })
-    console.log(test);
-    
-  },[id,array]) */
 
   return (
     <>
@@ -47,8 +49,8 @@ const Form = () => {
             <TextField
               label='Project name'
               fullWidth
-              name='project'
-              value={values.project}
+              name='projectName'
+              value={values.projectName}
               onChange={handleChange}
             />
             <TextField
@@ -61,7 +63,7 @@ const Form = () => {
             />
             <Selects values={values} handleChange={handleChange} />
             <Button variant='contained' size='small' color='secondary' sx={{ padding: '8px', marginTop: '10px' }} type='submit'>
-              Create project
+              {id === undefined ? 'Create project' : 'Save changes'}
             </Button>
           </Box>
         </Container>

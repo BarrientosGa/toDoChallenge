@@ -1,11 +1,12 @@
 import React from 'react'
-import { Avatar, Box, Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
-import MenuOptions from '../MenuOptions/MenuOptions'
-import { useStyles } from '../../styles/frameDesktopStyle'
+import { Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
-const FrameDesktop = () => {
 
-  const classes = useStyles()
+import { useSelector } from 'react-redux'
+import RowComponent from './RowComponent'
+
+const FrameDesktop = ({setEditing}) => {
+  const { array } = useSelector(state => state.toDo)
 
   return (
     <Container sx={{ marginTop: '25px' }}>
@@ -21,42 +22,15 @@ const FrameDesktop = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row">
-                <Box component='div' className={classes.boxFirst}>
-                  <Typography variant="subtitle1" color="initial">
-                    Landing page
-                  </Typography>
-                  <Typography variant="subtitle2" >
-                    Creation date: 09/09/2020 10:30 am
-                  </Typography>
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Box component='div' className={classes.boxShared}>
-                  <Avatar sx={{ background: 'red' }} className={classes.avatar}>WC</Avatar>
-                  <Typography variant='subtitle1' sx={{ marginLeft: '10px' }}>
-                    Walt cosani
-                  </Typography>
-                </Box>
-              </TableCell>
-              <TableCell align='center'>
-                <Box component='div' className={classes.boxShared}>
-                  <Avatar className={classes.avatar} />
-                  <Typography variant='subtitle1' sx={{ marginLeft: '10px' }}>
-                    Ignacio Truffa
-                  </Typography>
-                </Box>
-              </TableCell>
-              <TableCell align='center'>
-                <Paper sx={{ background: '#D9D9D9'}}>
-                  Enabled
-                </Paper>
-              </TableCell>
-              <TableCell align='center'>
-                <MenuOptions />
-              </TableCell>
-            </TableRow>
+            {array.length === 0 ?
+              <TableRow>
+                <TableCell align='center' colSpan='5'>
+                  Sin datos
+                </TableCell>
+              </TableRow>
+              : array.map((project, index) => (
+                <RowComponent key={index} project={project} setEditing={setEditing} />
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
