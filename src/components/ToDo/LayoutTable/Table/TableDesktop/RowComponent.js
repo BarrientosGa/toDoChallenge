@@ -2,7 +2,7 @@ import React from 'react'
 import { Avatar, Box, Paper, TableCell,TableRow, Typography } from '@mui/material'
 import { useStyles } from '../../styles/frameDesktopStyle'
 import MenuOptions from '../MenuOptions/MenuOptions'
-import { initialLetters } from '../../../../Utils/initialLetters'
+import { initialLetters } from '../../../../../Utils/initialLetters'
 
 const RowComponent = ({ project, setEditing }) => {
     const classes = useStyles()

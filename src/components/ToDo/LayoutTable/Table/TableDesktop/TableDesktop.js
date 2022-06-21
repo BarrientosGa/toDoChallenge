@@ -1,11 +1,9 @@
 import React from 'react'
 import { Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-
-
 import { useSelector } from 'react-redux'
 import RowComponent from './RowComponent'
 
-const FrameDesktop = ({setEditing}) => {
+const TableDesktop = ({setEditing}) => {
   const { array } = useSelector(state => state.toDo)
 
   return (
@@ -38,4 +36,4 @@ const FrameDesktop = ({setEditing}) => {
   )
 }
 
-export default FrameDesktop
+export default TableDesktop

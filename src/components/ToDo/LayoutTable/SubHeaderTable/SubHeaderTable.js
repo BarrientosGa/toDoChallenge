@@ -3,7 +3,7 @@ import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
 
-const SubHeader = () => {
+const SubHeaderTable = () => {
 
     return (
         <Box border='1px solid #D9D9D9'>
@@ -23,4 +23,4 @@ const SubHeader = () => {
     )
 }
 
-export default SubHeader
+export default SubHeaderTable

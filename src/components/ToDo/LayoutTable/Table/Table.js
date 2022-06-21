@@ -1,18 +1,18 @@
 import {useMediaQuery } from '@mui/material'
 import React from 'react'
-import FrameDesktop from './FrameDesktop/FrameDesktop';
+import TableDesktop from './TableDesktop/TableDesktop';
 
 import FrameMobile from './FrameMobile/FrameMobile';
 
-const Frame = ({setEditing}) => {
+const Table = () => {
     const hidden = useMediaQuery(theme => theme.breakpoints.down('lg'));
 
     return (
         <>
-            {hidden ? <FrameMobile/> : <FrameDesktop setEditing={setEditing} />}
+            {hidden ? <FrameMobile/> : <TableDesktop />}
         </>
         
     )
 }
 
-export default Frame
+export default Table

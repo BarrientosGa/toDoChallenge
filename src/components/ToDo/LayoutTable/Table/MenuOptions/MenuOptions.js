@@ -4,9 +4,9 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
-import { deleteToDo } from '../../../../redux/Slice/toDoSlice'
+import { deleteToDo } from '../../../../../redux/Slice/toDoSlice'
 import { useDispatch } from 'react-redux';
-import { sweetAlertConfirm } from '../../../../Utils/alertConfirm';
+import { sweetAlertConfirm } from '../../../../../Utils/alertConfirm';
 
 const ITEM_HEIGHT = 48;
 

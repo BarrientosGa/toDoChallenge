@@ -1,8 +1,8 @@
 import React, { useId } from 'react'
 import { Box, Button, Container, Paper, TextField } from '@mui/material'
-import Selects from '../Selects/Selects'
+import SelectsForm from '../SelectsForm/SelectsForm'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToDo, editToDo } from '../../../redux/Slice/toDoSlice'
+import { addToDo, editToDo } from '../../../../redux/Slice/toDoSlice'
 import moment from 'moment';
 import { useParams } from 'react-router-dom'
 import { useFormik } from 'formik'
@@ -65,7 +65,7 @@ const Form = () => {
               error={touched.description && errors.description}
               helperText={touched.description && errors.description}
             />
-            <Selects handleChange={handleChange} errors={errors} values={values} touched={touched} />
+            <SelectsForm handleChange={handleChange} errors={errors} values={values} touched={touched} />
             <Button variant='contained' size='small' color='secondary' sx={{ padding: '8px', marginTop: '10px' }} type='submit'>
               {id === undefined ? 'Create project' : 'Save changes'}
             </Button>
