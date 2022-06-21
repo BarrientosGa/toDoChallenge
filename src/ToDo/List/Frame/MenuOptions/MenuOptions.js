@@ -6,6 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
 import { deleteToDo } from '../../../../redux/Slice/toDoSlice'
 import { useDispatch } from 'react-redux';
+import { sweetAlertConfirm } from '../../../../Utils/alertConfirm';
 
 const ITEM_HEIGHT = 48;
 
@@ -21,6 +22,14 @@ const MenuOptions = ({ id, setEditing }) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleClickDelete = () => {
+        sweetAlertConfirm()
+        setTimeout(() => {
+            dispatch(deleteToDo(id))
+        }, 3500)
+    }
+
     return (
         <Box>
             <IconButton
@@ -60,7 +69,7 @@ const MenuOptions = ({ id, setEditing }) => {
                 <Divider />
 
                 <MenuItem selected={'Delete' === 'Pyxis'} onClick={handleClose}>
-                    <IconButton onClick={() => dispatch(deleteToDo(id))}>
+                    <IconButton onClick={handleClickDelete}>
                         <DeleteIcon />
                     </IconButton>
                     <Typography variant="body1" color="initial" sx={{ marginLeft: '10px' }}>
