@@ -3,7 +3,6 @@ import { makeStyles } from "@mui/styles";
 export const useStyles = makeStyles({
     container: {
         '&.MuiContainer-root': {
-            marginTop: '25px',
             background: '#ffffff',
             paddingTop: '10px',
             paddingBottom: '10px'

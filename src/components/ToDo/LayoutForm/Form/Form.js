@@ -40,8 +40,8 @@ const Form = () => {
 
   return (
     <>
-      <Paper elevation={3}>
-        <Container sx={{ background: '#ffffff', padding: '20px', marginTop: '25px' }}>
+      <Paper elevation={3} variant="outlined" className={classes.paper}>
+        <Container sx={{ background: '#ffffff', padding: '20px', marginTop: '25px'}}>
           <Box component='form' onSubmit={handleSubmit}>
             <TextField
               className={classes.textField}
