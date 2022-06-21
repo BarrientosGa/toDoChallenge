@@ -4,15 +4,17 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { deleteToDo } from '../../../../redux/Slice/toDoSlice'
+import { useDispatch } from 'react-redux';
 
 const ITEM_HEIGHT = 48;
 
 
 
-const MenuOptions = ({id, setEditing}) => {
+const MenuOptions = ({ id, setEditing }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const dispatch = useDispatch()
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -48,7 +50,7 @@ const MenuOptions = ({id, setEditing}) => {
             >
                 <Link to={`/edit/${id}`}>
                     <MenuItem selected={'Edit' === 'Pyxis'} onClick={handleClose}>
-                        <EditIcon/>
+                        <EditIcon />
                         <Typography variant="body1" color="initial" sx={{ marginLeft: '10px' }}>
                             Edit
                         </Typography>
@@ -56,12 +58,16 @@ const MenuOptions = ({id, setEditing}) => {
                     </MenuItem>
                 </Link>
                 <Divider />
+
                 <MenuItem selected={'Delete' === 'Pyxis'} onClick={handleClose}>
-                    <DeleteIcon />
+                    <IconButton onClick={() => dispatch(deleteToDo(id))}>
+                        <DeleteIcon />
+                    </IconButton>
                     <Typography variant="body1" color="initial" sx={{ marginLeft: '10px' }}>
                         Delete
                     </Typography>
                 </MenuItem>
+
 
             </Menu>
         </Box>

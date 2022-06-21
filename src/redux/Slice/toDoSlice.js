@@ -15,7 +15,7 @@ const toDoSlice = createSlice({
             })
         },
         deleteToDo: (state, { payload }) => {
-            state.array = state.array.filter(element => element.id !== payload.id)
+            state.array = state.array.filter(element => element.id !== payload)
         }
     }
 })
