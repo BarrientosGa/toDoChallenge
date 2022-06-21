@@ -2,6 +2,7 @@ import React from 'react'
 import { Avatar, Box, Paper, TableCell,TableRow, Typography } from '@mui/material'
 import { useStyles } from '../../styles/frameDesktopStyle'
 import MenuOptions from '../MenuOptions/MenuOptions'
+import { initialLetters } from '../../../../Utils/initialLetters'
 
 const RowComponent = ({ project, setEditing }) => {
     const classes = useStyles()
@@ -20,7 +21,7 @@ const RowComponent = ({ project, setEditing }) => {
             </TableCell>
             <TableCell>
                 <Box component='div' className={classes.boxShared}>
-                    <Avatar className={classes.avatar}>WC</Avatar>
+                    <Avatar className={classes.avatar}>{initialLetters(projectManager)}</Avatar>
                     <Typography variant='subtitle1' sx={{ marginLeft: '10px' }}>
                         {projectManager}
                     </Typography>
