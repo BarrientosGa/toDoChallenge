@@ -1,9 +1,13 @@
 import React from 'react'
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-const SubHeader = ({ editing }) => {
+const SubHeader = () => {
+
+    const {id} = useParams()
+    console.log(id);
+
     return (
         <Box border='1px solid #D9D9D9'>
             <AppBar position="static" color='header'>
