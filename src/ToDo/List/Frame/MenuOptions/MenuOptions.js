@@ -3,6 +3,7 @@ import { Box, Divider, IconButton, Menu, MenuItem, Typography } from '@mui/mater
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Link } from 'react-router-dom';
 
 const ITEM_HEIGHT = 48;
 
@@ -27,7 +28,7 @@ const MenuOptions = () => {
                 aria-haspopup="true"
                 onClick={handleClick}
             >
-                <MoreVertIcon sx={{color:'#000'}} />
+                <MoreVertIcon sx={{ color: '#000' }} />
             </IconButton>
             <Menu
                 id="long-menu"
@@ -44,17 +45,19 @@ const MenuOptions = () => {
                     },
                 }}
             >
-                <MenuItem selected={'Edit' === 'Pyxis'} onClick={handleClose}>
-                    <EditIcon />
-                    <Typography variant="body1" color="initial" sx={{marginLeft:'10px'}}>
-                        Edit
-                    </Typography>
+                <Link to={`/edit/1`}>
+                    <MenuItem selected={'Edit' === 'Pyxis'} onClick={handleClose}>
+                        <EditIcon />
+                        <Typography variant="body1" color="initial" sx={{ marginLeft: '10px' }}>
+                            Edit
+                        </Typography>
 
-                </MenuItem>
+                    </MenuItem>
+                </Link>
                 <Divider />
                 <MenuItem selected={'Delete' === 'Pyxis'} onClick={handleClose}>
                     <DeleteIcon />
-                    <Typography variant="body1" color="initial" sx={{marginLeft:'10px'}}>
+                    <Typography variant="body1" color="initial" sx={{ marginLeft: '10px' }}>
                         Delete
                     </Typography>
                 </MenuItem>

@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<List />} />
           <Route exact path='/add' element={<AddProject />} />
+          <Route exact path='/edit/:id' element={<AddProject />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

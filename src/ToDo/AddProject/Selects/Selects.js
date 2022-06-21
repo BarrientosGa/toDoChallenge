@@ -1,7 +1,8 @@
 import React from 'react'
 import { MenuItem, TextField } from '@mui/material'
 
-const Selects = () => {
+const Selects = ({values,handleChange}) => {
+    console.log(values);
     return (
         <>
             <TextField
@@ -9,11 +10,15 @@ const Selects = () => {
                 label="Project manager"
                 fullWidth
                 margin="normal"
+                name='projectManager'
+                value={values.projectManager}
+                onChange={handleChange}
+                
             >
-                <MenuItem>
+                <MenuItem value='Gabriel Barrientos'>
                     Gabriel Barrientos
                 </MenuItem>
-                <MenuItem>
+                <MenuItem value='Cosme fulanito'>
                     Cosme fulanito
                 </MenuItem>
             </TextField>
@@ -22,11 +27,14 @@ const Selects = () => {
                 label="Assigned to"
                 fullWidth
                 margin="normal"
+                name='assignedTo'
+                value={values.assignedTo}
+                onChange={handleChange}
             >
-                <MenuItem>
+                <MenuItem value='Pepito'>
                     Pepito
                 </MenuItem>
-                <MenuItem>
+                <MenuItem value='Pepita'>
                     Pepita
                 </MenuItem>
             </TextField>
@@ -35,11 +43,14 @@ const Selects = () => {
                 label="Status"
                 fullWidth
                 margin="normal"
+                name='status'
+                value={values.status}
+                onChange={handleChange}
             >
-                <MenuItem>
+                <MenuItem value='Enable'>
                     Enable
                 </MenuItem>
-                <MenuItem>
+                <MenuItem value='Disable'>
                     Disable
                 </MenuItem>
             </TextField>
