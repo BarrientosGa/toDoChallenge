@@ -12,7 +12,7 @@ const ITEM_HEIGHT = 48;
 
 
 
-const MenuOptions = ({ id, setEditing }) => {
+const MenuOptions = ({ id }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const dispatch = useDispatch()
@@ -25,9 +25,9 @@ const MenuOptions = ({ id, setEditing }) => {
 
     const handleClickDelete = () => {
         sweetAlertConfirm()
-        setTimeout(() => {
-            dispatch(deleteToDo(id))
-        }, 3500)
+            .then(resultado => {
+                return resultado && dispatch(deleteToDo(id))
+            })
     }
 
     return (
@@ -59,7 +59,9 @@ const MenuOptions = ({ id, setEditing }) => {
             >
                 <Link to={`/edit/${id}`}>
                     <MenuItem selected={'Edit' === 'Pyxis'} onClick={handleClose}>
-                        <EditIcon />
+                        <IconButton>
+                            <EditIcon />
+                        </IconButton>
                         <Typography variant="body1" color="initial" sx={{ marginLeft: '10px' }}>
                             Edit
                         </Typography>
