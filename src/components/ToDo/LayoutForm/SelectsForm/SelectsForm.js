@@ -20,11 +20,8 @@ const Selects = ({ handleChange, errors, values, touched }) => {
                 error={touched.projectManager && errors.projectManager}
                 helperText={touched.projectManager && errors.projectManager}
             >
-                <MenuItem value='Gabriel Barrientos'>
-                    Gabriel Barrientos
-                </MenuItem>
-                <MenuItem value='Cosme fulanito'>
-                    Cosme fulanito
+                <MenuItem value='Walt cosani'>
+                    Walt Cosani
                 </MenuItem>
             </TextField>
             <TextField
@@ -39,11 +36,8 @@ const Selects = ({ handleChange, errors, values, touched }) => {
                 error={touched.assignedTo && errors.assignedTo}
                 helperText={touched.assignedTo && errors.assignedTo}
             >
-                <MenuItem value='Pepito'>
-                    Pepito
-                </MenuItem>
-                <MenuItem value='Pepita'>
-                    Pepita
+                <MenuItem value='Ignacio Truffa'>
+                    Ignacio Truffa
                 </MenuItem>
             </TextField>
             <TextField

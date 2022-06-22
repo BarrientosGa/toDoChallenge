@@ -10,15 +10,9 @@ const FrameMobile = () => {
 
     return (
         <Box sx={{ marginTop: '25px', }}>
-            {array.length === 0 ?
-                <Container className={classes.container}>
-                    <Typography>
-                        Sin datos
-                    </Typography>
-                </Container>
-                : array.map((project) => (
-                    <ItemFrame project={project} />
-                ))}
+            {array.map((project) => (
+                <ItemFrame project={project} />
+            ))}
         </Box>
     )
 }
