@@ -1,11 +1,9 @@
 import React from 'react'
-import { Box, Container, Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import { useSelector } from 'react-redux';
 import ItemFrame from './ItemFrameMobile/ItemFrame'
-import { useStyles } from '../../styles/frameMobileStyles';
 
 const FrameMobile = () => {
-    const classes = useStyles()
     const { array } = useSelector(state => state.toDo)
 
     return (
