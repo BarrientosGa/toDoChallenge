@@ -17,7 +17,7 @@ const Form = () => {
   const { array } = useSelector(state => state.toDo)
   const project = array.find(element => element.id === id)
 
-  const { handleSubmit, errors, handleChange, values, touched, handleBlur } = useFormik({
+  const { handleSubmit, errors, handleChange, values, touched, handleBlur, resetForm } = useFormik({
     enableReinitialize: true,
     initialValues: {
       id: id === undefined ? idForm : project.id,
@@ -31,6 +31,7 @@ const Form = () => {
     onSubmit: (values) => {
       if (id === undefined) {
         dispatch(addToDo({ ...values, date: moment(new Date()).format('DD/MM/YYYY HH:mm a') }))
+        resetForm()
       }
       else {
         dispatch(editToDo({ ...values, date: moment(new Date()).format('DD/MM/YYYY HH:mm a') }))
