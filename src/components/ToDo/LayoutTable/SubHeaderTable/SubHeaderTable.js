@@ -10,7 +10,7 @@ const SubHeaderTable = () => {
             <AppBar position="static" color='header'>
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                        My Projectsss
+                        My Projects
                     </Typography>
                     <Link to='/add'>
                         <Button variant='contained' size='small' color='secondary' sx={{ padding: '10px' }} startIcon={<AddIcon sx={{ fontSize: '23px !important' }} />}>
